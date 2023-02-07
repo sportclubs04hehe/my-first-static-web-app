@@ -13,10 +13,17 @@
   <main>
     <div class="container">
       <div class="row text-center">
-        <h1 class="display-1">LÂM BÚ CẶC 😂</h1>
+        <h1 class="display-1">Le Minh Huy JS App</h1>
+        <p>Loading content from the API: <b id="name">....</b></p>
       </div>
     </div>
   </main>
+  <script>
+    (async () => {
+      const {text} = await(await fetch(`/api/message`)).json();
+      document.querySelector('#name').textContent = text;
+    })
+  </script>
 </body>
 
 </html>
